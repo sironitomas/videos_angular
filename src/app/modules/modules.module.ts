@@ -5,11 +5,13 @@ import { FormsModule } from "@angular/forms";
 import { CoreModule } from '../core/core.module';
 
 import { ModulesRoutingModule } from './modules-routing.module';
-import { MainComponent } from './main/main.component';
+import { CategoriasComponent } from './categorias/categorias.component';
+import { VideosComponent } from './videos/videos.component';
 
 @NgModule({
   declarations: [
-    MainComponent
+    CategoriasComponent,
+    VideosComponent
   ],
   imports: [
     CommonModule,

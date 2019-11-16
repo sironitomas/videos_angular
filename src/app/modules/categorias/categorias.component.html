@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-5">
+            <form>
+                <label>Buscar</label>
+                <input type="text" [(ngModel)]="string_busqueda" [ngModelOptions]="{standalone: true}">
+                <div>
+                    <label>TODOS
+                        <input type="radio" [(ngModel)]="nro_categoria" value="-1" [ngModelOptions]="{standalone: true}">
+                    </label>
+                </div>
+                <div *ngFor="let categoria of categoriasList">
+                    <label>{{categoria.nom_categoria}}
+                        <input type="radio" [(ngModel)]="nro_categoria" value="{{categoria.nro_categoria}}"
+                            [ngModelOptions]="{standalone: true}">
+                    </label>
+                </div>
+                <button (click)="buscar()">Buscar</button>
+            </form>
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-sm-7 body-content">
+            <app-videos [videosList]="this.videosList"></app-videos>
+        </div>
+    </div>
+</div>
+    
