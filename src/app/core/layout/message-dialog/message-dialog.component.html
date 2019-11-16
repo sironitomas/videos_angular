@@ -1,0 +1,8 @@
+<h1 mat-dialog-title *ngIf="message.title">{{message.title}}</h1>
+<h1 mat-dialog-title *ngIf="!message.title">Mensaje de Error</h1>
+<div mat-dialog-content>
+  <p>{{message.text}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cerrar</button>
+</div>
