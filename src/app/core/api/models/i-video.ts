@@ -1,7 +1,9 @@
-export interface IVideos{
-    nroVideo: number;
-    nroCategoria: number;
-    nomCategoria: string;
+export interface IVideos {
+    nro_video: number;
+    nro_categoria: number;
+    nom_categoria: string;
     titulo: string;
-    linkVideo: string;
+    link_video: string;
+    visto: boolean;
+    cantante: string;
 }

@@ -1,28 +1,30 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-5">
-            <form>
+        <div class="col-md-6">
+            <form class="form-group">
                 <label>Buscar</label>
-                <input type="text" [(ngModel)]="string_busqueda" [ngModelOptions]="{standalone: true}">
-                <div>
+                <input class="form-control" type="text" [(ngModel)]="string_busqueda" [ngModelOptions]="{ standalone: true }" />
+                <div class="row">
                     <label>TODOS
-                        <input type="radio" [(ngModel)]="nro_categoria" value="-1" [ngModelOptions]="{standalone: true}">
+                        <input type="radio" [(ngModel)]="nro_categoria" value="-1"
+                            [ngModelOptions]="{ standalone: true }" />
                     </label>
                 </div>
-                <div *ngFor="let categoria of categoriasList">
-                    <label>{{categoria.nom_categoria}}
-                        <input type="radio" [(ngModel)]="nro_categoria" value="{{categoria.nro_categoria}}"
-                            [ngModelOptions]="{standalone: true}">
-                    </label>
+                <div class="row">
+                    <div class="col-1" *ngFor="let categoria of categoriasList">
+                        <label>{{ categoria.nom_categoria }}
+                            <input type="radio" [(ngModel)]="nro_categoria"
+                                value="{{ categoria.nro_categoria }}" [ngModelOptions]="{ standalone: true }" />
+                        </label>
+                    </div>
+
                 </div>
-                <button (click)="buscar()">Buscar</button>
+                <button class="btn btn-primary" (click)="buscar()">Buscar</button>
             </form>
         </div>
-    </div>  
-    <div class="row">
-        <div class="col-sm-7 body-content">
+        <div class="col-md-6 body-content">
             <app-videos [videosList]="this.videosList"></app-videos>
         </div>
     </div>
+    <div class="row"></div>
 </div>
-    

@@ -18,11 +18,10 @@ export class CategoriasComponent implements OnInit {
   videosList: IVideos[];
 
   constructor( private categoriaService: GetCategoriasService, private videosService: GetVideosService ) { }
-  
   private data: IParams = {
     nro_categoria: this.nro_categoria,
     string_busqueda: this.string_busqueda
-  }
+  };
 
   ngOnInit() {
   this.categoriaService.getCategorias().then((categorias: ICategoria[]) => {
@@ -30,15 +29,15 @@ export class CategoriasComponent implements OnInit {
       console.log(categorias);
     });
   }
-  
   buscar() {
     this.data = {
       nro_categoria: this.nro_categoria,
       string_busqueda: this.string_busqueda
-    }
+    };
+
     this.videosService.get_videos(this.data).then((videos: IVideos[]) => {
       this.videosList = videos;
-    })
+    });
   }
 
 }

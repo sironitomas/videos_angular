@@ -5,6 +5,8 @@ import { ICategoria } from '../../models/i-categoria';
 import { IParams } from '../../models/i-params';
 import { IVideos } from '../../models/i-video';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,5 +24,6 @@ export class GetVideosService extends Resource {
     requestBodyType: ResourceRequestBodyType.FORM_DATA,
     responseBodyType: ResourceResponseBodyType.Json
   }) get_videos: IResourceMethod<IParams, IVideos[]>;
+
 
 }

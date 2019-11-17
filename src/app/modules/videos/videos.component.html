@@ -1,7 +1,10 @@
-<div *ngFor="let video of videosList">
-    <div>
-        <a href={{video.linkVideo}}>Titulo: {{video.titulo}}</a>
-        <br>
-        <label>Cantante: {{video.cantante}}</label>
+<div *ngFor="let video of videosList" class="card">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h3>{{video.titulo}}</h3>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a class="btn btn-primary" (click)="showVideo(video)">Ver video!</a>
+        </div>
     </div>
 </div>
